@@ -26,7 +26,7 @@ h2 {
     font-size: 32px;
 }
 h3 {
-    font-size: 28px;
+    font-size: 24px;
     margin: 30px 0;
 }
 h4 {
@@ -86,6 +86,8 @@ span {
     width: 70%;
     text-align: center;
     margin: 0 auto;
+    font-size: 14px;
+    font-style: italic;
 }
 .info {
     margin: 0 auto;
@@ -98,27 +100,49 @@ span {
     gap: 30px;
 }
 .box--img {
+    position: relative;
     width: 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
+}
+.box--hover {
+    position: relative;
+    width: 30%;
+    height: 350px;
+    border-radius: 50%;
+    background-image: url(../assets/img/WEBP/Fårikål.webp);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+.box--hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image: url(../assets/img/WEBP/plankefisk.webp);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity .8s ease;
+    pointer-events: none;
+}
+.box--hover:hover::before {
+  opacity: 1;
 }
 .box--info {
-    width: 50%;
+    width: 60%;
     margin: 20px 10px;
     padding: 10px 20px;
     font-style: italic;
     display: flex;
     flex-direction: column;
 }
-.box--info p {
-    font-size: 18px;
-}
-.box--info:first-child p {
-    text-align: left;
-}
-.box--info:last-of-type p {
-  text-align: right;
+.box--info h2 {
+    margin-bottom: 20px;
 }
 .box--menu {
     margin-bottom: 50px;
@@ -156,8 +180,7 @@ li {
     position: relative;
     max-width: 100%;
     height: auto;
-    margin: 0;
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -269,6 +292,9 @@ li {
     text-align: center;
     border-bottom: 1px solid #223133;
 }
+.foodie--text p {
+    font-size: 14px;
+}
 .title--cafe {
     font-style: italic;
     margin-bottom: 30px;
@@ -301,19 +327,33 @@ aside h4 {
 }
 
 
-
     /*** --- CONTACT --- ***/
 .form--container {
+    position: relative;    
+    background-image: url(../assets/img/WEBP/norway-nature.webp);
     background-color: #111;
-    color: #D4C39A;
+    color: #EAE3C3;
     border: 1px solid #5B8FB9;
     border-radius: 5px;
     margin: 0 auto;
     margin-top: 80px;
+    margin-bottom: 15px;
     padding: 20px;
-    width: 100%;
+    width: 80%;
     max-width: 700px;
     height: auto;
+    z-index: 1;
+    overflow: hidden;
+}
+.form--container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 .button {
     width: 90%;
@@ -338,6 +378,7 @@ aside h4 {
     padding: 5px;
     text-align: center;
 }
+
 
 
     /*** --- RESPONSIVE --- ***/
@@ -412,8 +453,8 @@ aside h4 {
     .info .box--img {
         order: -1;
     }
-    .box--img, .box--info {
-        width: 100%;
+    .box--img, .box--info, .box--hover {
+        width: 90%;
         text-align: center;
     }
     aside h4 {
