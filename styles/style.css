@@ -19,77 +19,67 @@ h1, h2, h3, h4, footer {
     text-align: center;
 }  
 h1 {
-    font-size: 32px;
-    margin: 20px 0;
+    font-size: 36px;
+
 }
 h2 {
-    font-size: 28px;
+    font-size: 32px;
 }
 h3 {
-    font-size: 26px;
+    font-size: 28px;
+    margin: 30px 0;
 }
 h4 {
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
-    text-transform: uppercase;
     margin-bottom: 20px;
 }
 p {
-    font-size: 14px;
+    font-size: 16px;
 }
 img {
     max-width: 100%;
     height: auto;
 }
 
+
+
     /*** --- NAVBAR --- ***/
-.nav {  
-    display: flex;
-    align-items: center;
-    background-color: #202020;
-    padding: 10px 20px;
-    width: 100%;
-    flex-wrap: nowrap;
-}
-.nav img.logo {
-    height: 40px;
-    margin-right: 20px;
-    display: block;
-}
 .navbar {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    background-color: #202020;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    flex-grow: 1;
-}
-.nav-li {
-    list-style-type: none;
-    padding: 6px;
-    border-radius: 2px;
-    transition: .6s ease all;
-}
-.nav-li:hover {
-    background-color: #2A3C2F;
-    transform: scale(1.1);
+    background-color: #223133;
 }
 .nav-link {
-    color: #F2F2F2;
-    text-decoration: none;  
-    transition: .1s ease color;
+    font-size: 14px;
+    margin: 2px;
+    padding: 5px;
+    color: #5B8FB9;
 }
 .nav-link:hover {
-    color: #f1c766;
+    color: #C6B06E;
+}
+.nav-link--active {
+    color: #C6B06E;
+}
+.navbar-toggler {
+    border: none;
 }
 span {
     font-size: 16px;
     font-weight: bold;
     color: #5B8FB9;
 }
+.navbar-brand {
+    color: #f5f5dc;
+    font-style: italic;
+    transition: .3s ease color;
+}
+.navbar-brand:hover {
+    color: #5B8FB9;
+}
+.navbar-toggler {
+    border: 1px solid #f5f5dc;
+}
+
 
     /*** --- MAIN --- ***/
 .title {
@@ -99,48 +89,57 @@ span {
 }
 .info {
     margin: 0 auto;
-    padding: 2px;
-    width: 100%;
-    max-width: 900px;
-    height: 200px;
+    padding: 10px;
+    width: 90%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 }
 .box--img {
     width: 30%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
-.box--img img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 .box--info {
-    width: 70%;
-    height: 100%;
-    margin: 5px;
+    width: 50%;
+    margin: 20px 10px;
+    padding: 10px 20px;
     font-style: italic;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    overflow-y: auto;
+}
+.box--info p {
+    font-size: 18px;
+}
+.box--info:first-child p {
+    text-align: left;
+}
+.box--info:last-of-type p {
+  text-align: right;
+}
+.box--menu {
+    margin-bottom: 50px;
 }
 .box--menu h3 {
-    margin-top: 30px;
+    margin-top: 20px;
+}
+.profile {
+    width: 350px;
+    height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .menu {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around; 
     overflow-x: hidden;
 }
@@ -149,26 +148,87 @@ li {
 }
 
     /*** --- MENU --- ***/
+.box--main {
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    color: #f5f5dc;
+    overflow: hidden;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/assets/img/WEBP/foto-portada2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(0.7);
+    z-index: 2;
+}
+.container h1 {
+    width: auto;
+    margin: 0 0 10px 0;
+    text-align: left;
+    align-self: flex-start;
+    font-style: italic;
+}
+.container .title {
+    width: auto;
+    max-width: 400px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    align-self: flex-start;
+    line-height: 1.2;
+}
+.container h1, .container .title {
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    z-index: 2;
+    margin: 8px 0;
+}
 .menu--cafe {
+    width: 90%;
+    max-width: 700px;
+    height: auto;
     margin: 0 auto;
     padding: 10px 0;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px;
+    justify-items: center;
 }
 .menu--info {
     margin: 0 auto;
-    margin-top: 5px;
-    border-bottom: 1px solid rgba(212, 195, 154, 0.1);
-    transition: .6s ease transform;
+    min-width: 150px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    transition: .6s ease all;
+}
+.menu--info:hover{
+    transform: scale(1.1);
 }
 .menu--info h4, .menu--info p {
     color: #EAE3C3;
     transition: .8s ease;
-}
-.menu--info:hover {
-    transform: scale(1.1);
 }
 .menu--info:hover h4 {
     color: #C6B06E;
@@ -176,12 +236,49 @@ li {
 .menu--info:hover p {
     color: #D4C39A;
 }
+.foodie {
+    margin: 0 auto;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(212, 195, 154, 0.1);
+}
+.foodie:last-child {
+    border-bottom: none;
+}
+.foodie--img {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: auto;
+}
+.foodie--img img{
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    margin: 10px 0;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.foodie--text {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #223133;
+}
 .title--cafe {
     font-style: italic;
     margin-bottom: 30px;
 }
+.title--cafe p {
+    text-align: center;
+    margin-top: 10px;
+}
 .title--cafe:first-child {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .img--cafe {
     border: 2px solid blue;
@@ -204,6 +301,45 @@ aside h4 {
 }
 
 
+
+    /*** --- CONTACT --- ***/
+.form--container {
+    background-color: #111;
+    color: #D4C39A;
+    border: 1px solid #5B8FB9;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+.button {
+    width: 90%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #223133;
+    color: #5B8FB9;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: .6s ease all;
+}
+.button:hover {
+    background-color: #5B8FB9;
+    color: #223133;
+}
+.col-md-6 {
+    margin-top: 3px;
+}
+.col-12, .col-md-6 {
+    margin-bottom: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+
     /*** --- RESPONSIVE --- ***/
 
     /*** --- MOBILE --- ***/
@@ -214,21 +350,15 @@ aside h4 {
     p {
         font-size: 12px;
     }
-    .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav img.logo {
-        flex-basis: auto;
-        margin-bottom: 0;
-        height: 50px;
-    }
     .navbar {
-        margin-top: 10px;
         display: flex;
+        gap: 2px;
         flex-direction: column;
         align-items: center;
         font-size: 12px;
+    }
+    .container {
+        height: 200px;
     }
    menu h3 {
         font-size: 20px;
@@ -236,7 +366,7 @@ aside h4 {
     .menu--cafe {
         width: 100%;
         max-width: 320px;
-        margin: 0 auto 20px auto;
+        margin: 0 auto 10px auto;
         padding: 0 10px;
         display: grid;
         grid-template-columns: repeat(1,1fr);
@@ -246,23 +376,18 @@ aside h4 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin: 0 auto 15px auto;
+        margin: 0 auto 5px auto;
         max-width: 280px;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
     }
     .menu--info .price {
         margin-top: 8px;    
     }
     .foodie {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        max-width: 280px;
     }
-    .foodie img {
-        width: 80px;
+    .foodie--img {
+        width: 100%;
         height: auto;
-        flex-shrink: 0;
     }
     .foodie p {
         margin: 0;
@@ -279,9 +404,6 @@ aside h4 {
     h2 {
         font-size: 20px;
     }
-    h4 {
-        font-size: 14px;
-    }
     .info {
         flex-direction: column;
         height: auto;
@@ -296,6 +418,15 @@ aside h4 {
     }
     aside h4 {
         margin-bottom: 10px;
+    }
+    .form--container {
+        max-width: 90%;
+    }
+    .button {
+        width: 100%;
+    }
+    .col-12, .col-md-6 {
+        padding: 0;
     }
 }
     /*** --- TABLET and DESKTOP--- ***/
